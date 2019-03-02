@@ -19,7 +19,7 @@ video {
 .button {
   cursor: pointer;
   display: block;
-  width: 160px;
+  width: 640px;
   border: 1px solid black;
   font-size: 16px;
   text-align: center;
@@ -37,14 +37,14 @@ h2 {
 .left {
   margin-right: 10px;
   float: left;
-  width: 160px;
+  width: 640px;
   padding: 0px;
 }
 
 .right {
   margin-left: 10px;
   float: left;
-  width: 160px;
+  width: 640px;
   padding: 0px;
 }
 
@@ -58,25 +58,25 @@ h2 {
     </head>
     <body>
         
-            <p>Click the "Start" button to begin video recording for a few seconds. You can stop
-   the video by clicking the creatively-named "Stop" button. The "Download"
-   button will download the received data (although it's in a raw, unwrapped form
-   that isn't very useful).
+<p style="color:blue">
+ CLICK THE START BUTTON TO START THE VIDEO AND STOP BUTTON TO STOP THE VIDEO. 
+ CLICK DOWNLOAD BUTTON TO DOWNLOAD THE VIDEO
 </p>
+
 <br>
  <div class="left">
   <div id="startButton" class="button">
     Start
   </div>
   <h2>Preview</h2>
-  <video id="preview" width="160" height="120" autoplay muted></video>
+  <video id="preview" width="640" height="480" autoplay muted></video>
 </div>
  <div class="right">
   <div id="stopButton" class="button">
     Stop
   </div>
   <h2>Recording</h2>
-  <video id="recording" width="160" height="120" controls></video>
+  <video id="recording" width="640" height="480" controls></video>
   <a id="downloadButton" class="button">
     Download
   </a>
