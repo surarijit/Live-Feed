@@ -1,13 +1,10 @@
 
-
-{% load static from staticfiles%}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel = "stylesheet" href = "{% static 'style2.css' %}">
-
-
+        <link href="https://developer.mozilla.org/static/build/styles/samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
+        
         <style type="text/css">
             body {
   font: 14px "Open Sans", "Arial", sans-serif;
@@ -15,26 +12,21 @@
 
 video {
   margin-top: 2px;
-  border: 6px solid black;
+  border: 1px solid black;
 }
 
 .button {
   cursor: pointer;
   display: block;
-  width: 640px;
-  border: 5px solid pink;
+  width: 160px;
+  border: 1px solid black;
   font-size: 16px;
   text-align: center;
   padding-top: 2px;
   padding-bottom: 4px;
-  color:whitesmoke;
-  background-color: darkslateblue;
+  color: white;
+  background-color: darkgreen;
   text-decoration: none;
-}
-.button:hover, .button:active {
-  background-color: black;
-  color : white;
-  border: 5px solid red;
 }
 
 h2 {
@@ -44,14 +36,14 @@ h2 {
 .left {
   margin-right: 10px;
   float: left;
-  width: 640px;
+  width: 160px;
   padding: 0px;
 }
 
 .right {
   margin-left: 10px;
   float: left;
-  width: 640px;
+  width: 160px;
   padding: 0px;
 }
 
@@ -65,22 +57,25 @@ h2 {
     </head>
     <body>
         
-            <h1 style="color:red; font-family: 'Lobster'; background-color: skyblue; text-align: center" ><strong>LIVE FEED DISPLAY</strong>
-            </h1>
+            <p>Click the "Start" button to begin video recording for a few seconds. You can stop
+   the video by clicking the creatively-named "Stop" button. The "Download"
+   button will download the received data (although it's in a raw, unwrapped form
+   that isn't very useful).
+</p>
 <br>
  <div class="left">
   <div id="startButton" class="button">
     Start
   </div>
-  <h2 style ="color: purple">Preview</h2>
-  <video id="preview" width="640" height="480"  autoplay muted></video>
+  <h2>Preview</h2>
+  <video id="preview" width="160" height="120" autoplay muted></video>
 </div>
  <div class="right">
   <div id="stopButton" class="button">
     Stop
   </div>
   <h2>Recording</h2>
-  <video id="recording" width="640" height="480" controls></video>
+  <video id="recording" width="160" height="120" controls></video>
   <a id="downloadButton" class="button">
     Download
   </a>
@@ -127,50 +122,6 @@ let recordingTimeMS = 5000;
     recorded
   ])
   .then(() => data);
-}body {
-  font: 14px "Open Sans", "Arial", sans-serif;
-}
-
-video {
-  margin-top: 2px;
-  border: 1px solid black;
-}
-
-.button {
-  cursor: pointer;
-  display: block;
-  width: 160px;
-  border: 1px solid black;
-  font-size: 16px;
-  text-align: center;
-  padding-top: 2px;
-  padding-bottom: 4px;
-  color: white;
-  background-color: darkgreen;
-  text-decoration: none;
-}
-
-h2 {
-  margin-bottom: 4px;
-}
-
-.left {
-  margin-right: 10px;
-  float: left;
-  width: 160px;
-  padding: 0px;
-}
-
-.right {
-  margin-left: 10px;
-  float: left;
-  width: 160px;
-  padding: 0px;
-}
-
-.bottom {
-  clear: both;
-  padding-top: 10px;
 }
  function stop(stream) {
   stream.getTracks().forEach(track => track.stop());
