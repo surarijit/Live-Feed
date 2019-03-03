@@ -1,8 +1,12 @@
 
+
+{% load static from staticfiles%}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel = "stylesheet" href = "{% static 'style2.css' %}">
+
 
         <style type="text/css">
             body {
@@ -30,7 +34,7 @@ video {
 .button:hover, .button:active {
   background-color: black;
   color : white;
-  
+  border: 5px solid red;
 }
 
 h2 {
@@ -61,15 +65,15 @@ h2 {
     </head>
     <body>
         
-            <h1 style="color:blue; font-family: 'Lobster'" ><strong>WELCOME TO MY WEBPAGE</strong>
+            <h1 style="color:red; font-family: 'Lobster'; background-color: skyblue; text-align: center" ><strong>LIVE FEED DISPLAY</strong>
             </h1>
 <br>
  <div class="left">
   <div id="startButton" class="button">
     Start
   </div>
-  <h2>Preview</h2>
-  <video id="preview" width="640" height="480" autoplay muted></video>
+  <h2 style ="color: purple">Preview</h2>
+  <video id="preview" width="640" height="480"  autoplay muted></video>
 </div>
  <div class="right">
   <div id="stopButton" class="button">
@@ -123,6 +127,50 @@ let recordingTimeMS = 5000;
     recorded
   ])
   .then(() => data);
+}body {
+  font: 14px "Open Sans", "Arial", sans-serif;
+}
+
+video {
+  margin-top: 2px;
+  border: 1px solid black;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  width: 160px;
+  border: 1px solid black;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  color: white;
+  background-color: darkgreen;
+  text-decoration: none;
+}
+
+h2 {
+  margin-bottom: 4px;
+}
+
+.left {
+  margin-right: 10px;
+  float: left;
+  width: 160px;
+  padding: 0px;
+}
+
+.right {
+  margin-left: 10px;
+  float: left;
+  width: 160px;
+  padding: 0px;
+}
+
+.bottom {
+  clear: both;
+  padding-top: 10px;
 }
  function stop(stream) {
   stream.getTracks().forEach(track => track.stop());
