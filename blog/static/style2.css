@@ -42,9 +42,7 @@ body, html {
     border: 5px solid red;
   }
   
-  h2 {
-    margin-bottom: 4px;
-  }
+  
   
   .left {
     margin-right: 10px;
@@ -57,7 +55,7 @@ body, html {
     margin-left: 10px;
     float: left;
     width: 640px;
-    padding: 0px;
+    padding: 10px;
   }
   
   .bottom {
