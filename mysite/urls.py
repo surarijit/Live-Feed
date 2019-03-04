@@ -7,6 +7,8 @@ urlpatterns = [
     path('index/', include('blog.urls')),
     path('',include('blog.urls')),
     path('homapge/', include('blog.urls')),
+
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()
